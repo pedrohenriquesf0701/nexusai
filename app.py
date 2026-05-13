@@ -3,7 +3,8 @@ import google.generativeai as genai
 import re
 
 app = Flask(__name__)
-genai.configure(api_key="AIzaSyBwes0CAOYVYLQxk9AVOu5aRhkcVH3bg5Y")
+import os
+genai.configure(api_key=os.environ.get("AIzaSyBwes0CAOYVYLQxk9AVOu5aRhkcVH3bg5Y"))
 model = genai.GenerativeModel("gemini-2.5-flash")
 
 def md_to_html(text):
