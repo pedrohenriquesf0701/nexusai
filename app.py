@@ -1,11 +1,12 @@
 from flask import Flask, render_template_string, request, jsonify
-from google import genai
+import google.generativeai as genai
 import os
 import re
 import base64
 
 app = Flask(__name__)
-client = genai.Client(api_key=os.environ.get("GEMINI_KEY"))
+genai.configure(api_key=os.environ.get("GEMINI_KEY"))
+model = genai.GenerativeModel("gemini-2.5-flash")
 
 def md_to_html(text):
     blocos = {}
