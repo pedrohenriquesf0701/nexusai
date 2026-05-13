@@ -5,7 +5,7 @@ import re
 import base64
 
 app = Flask(__name__)
-client = genai.Client(api_key=os.environ.get("AIzaSyBwes0CAOYVYLQxk9AVOu5aRhkcVH3bg5Y"))
+client = genai.Client(api_key=os.environ.get("GEMINI_KEY"))
 
 def md_to_html(text):
     blocos = {}
